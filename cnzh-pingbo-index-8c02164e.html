@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>平博 · 实用信息索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f0f2f5;
+      color: #1e293b;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* hero 主视觉 */
+    .hero {
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      padding: 2.5rem 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e9edf2;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0b1926;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero .desc {
+      max-width: 640px;
+      margin: 0 auto 1.25rem;
+      color: #475569;
+      font-size: 1.125rem;
+    }
+
+    .hero .tagline {
+      display: inline-block;
+      background: #eef2f6;
+      padding: 0.35rem 1rem;
+      border-radius: 40px;
+      font-size: 0.875rem;
+      color: #334155;
+      border: 1px solid #dbe1e8;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .card-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .card-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e2e8f0;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .card:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card h3 .emoji {
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .card p {
+      color: #334155;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card ul {
+      padding-left: 1.25rem;
+      margin-top: 0.5rem;
+      color: #475569;
+      font-size: 0.9rem;
+    }
+
+    .card ul li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* 适合人群卡片 (两块合并) */
+    .audience-section {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem 1.75rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .audience-section h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+
+    .audience-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .audience-item {
+      flex: 1 1 200px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 1.25rem 1rem;
+    }
+
+    .audience-item h4 {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: #1e293b;
+    }
+
+    .audience-item p {
+      color: #475569;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* 自然链接段落 */
+    .contextual-link {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.75rem 1.75rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .contextual-link p {
+      color: #1e293b;
+      font-size: 1rem;
+      max-width: 780px;
+    }
+
+    .contextual-link a {
+      color: #2563eb;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 500;
+    }
+
+    .contextual-link a:hover {
+      color: #1d4ed8;
+      text-decoration-thickness: 2px;
+    }
+
+    /* FAQ 摘要 */
+    .faq-mini {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.5rem 1.75rem;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      margin-bottom: 2rem;
+    }
+
+    .faq-mini h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+
+    .faq-item {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #eef2f6;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item span {
+      color: #475569;
+      font-size: 0.9rem;
+    }
+
+    /* 页脚 */
+    .footer-note {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.82rem;
+      padding: 1.25rem 0 0.5rem;
+      border-top: 1px solid #dce2e9;
+      margin-top: 1rem;
+    }
+
+    .footer-note a {
+      color: #64748b;
+      text-decoration: underline dotted;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 主视觉 hero -->
+    <div class="hero">
+      <h1>平博 · 信息索引</h1>
+      <p class="desc">一个围绕「平博」主题聚合实用信息的站点。帮助访问者快速理解网站的内容方向与使用场景。</p>
+      <span class="tagline">📌 工具 · 参考 · 索引</span>
+    </div>
+
+    <!-- 用途卡片（信息卡片式） -->
+    <div class="card-grid">
+      <div class="card">
+        <h3><span class="emoji">🔍</span> 快速定位</h3>
+        <p>通过结构化分类，让访问者不浪费时间在无关信息上。每个模块对应一个具体意图。</p>
+        <ul>
+          <li>分类标签清晰</li>
+          <li>内容区块独立</li>
+          <li>减少跳转次数</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span class="emoji">🧩</span> 场景整合</h3>
+        <p>将不同使用场景的信息组织在同一页面，方便横向对比与参考。</p>
+        <ul>
+          <li>日常查询</li>
+          <li>主题了解</li>
+          <li>横向浏览</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span class="emoji">⚙️</span> 轻量框架</h3>
+        <p>页面结构保持精简，不依赖第三方库，适配主流浏览器与设备。</p>
+        <ul>
+          <li>纯 HTML / CSS</li>
+          <li>响应式适配</li>
+          <li>快速加载</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 适合人群 -->
+    <div class="audience-section">
+      <h2>适合哪些人使用</h2>
+      <div class="audience-flex">
+        <div class="audience-item">
+          <h4>📘 初次接触者</h4>
+          <p>想快速了解「平博」相关主题的大致轮廓，不需要复杂操作。</p>
+        </div>
+        <div class="audience-item">
+          <h4>🔖 信息整理者</h4>
+          <p>需要在一个页面内获取多个分类要点，用于参考或二次归纳。</p>
+        </div>
+        <div class="audience-item">
+          <h4>🧭 方向确认者</h4>
+          <p>判断该网站是否与自己的需求匹配，节省筛选时间。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 自然链接段落 — 嵌入一个 a 标签，文本严格等于「平博」 -->
+    <div class="contextual-link">
+      <p>
+        如果你正在寻找一个围绕「平博」主题的集中索引页，那么可以直接浏览 
+        <a href="https://cnzh-pingbo.com">平博</a> 
+        上的内容。该页面按照信息卡片、用途场景与常见问题组织，方便你从整体上把握资源结构。
+      </p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+      <h3>常见问题摘要</h3>
+      <div class="faq-item">
+        <strong>这个页面是做什么的？</strong>
+        <span>它是为「平博」这个主题提供清晰内容分组的介绍页，帮助使用者快速理解网站定位。</span>
+      </div>
+      <div class="faq-item">
+        <strong>信息会持续更新吗？</strong>
+        <span>内容结构保持稳定，后续会根据主题变化做适度调整，但不会频繁变动。</span>
+      </div>
+      <div class="faq-item">
+        <strong>如何快速找到我需要的内容？</strong>
+        <span>可以直接浏览上方卡片区域，每个卡片都代表一种使用角度。</span>
+      </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer-note">
+      <span>关于 <a href="https://cnzh-pingbo.com">平博</a> · 仅作信息索引用途</span>
+    </div>
+  </div>
+</body>
+</html>
